@@ -51,7 +51,8 @@ public class ReactionListener extends ListenerAdapter {
 				//---------------------------------------- Help UI ----------------------------------------
 				
 //				Home UI
-				if(event.getReaction().toString().contains("RE:" + home)) {
+				if(event.getReaction().toString().contains("RE:" + home))
+				{
 					
 					builder.setTitle("**__Bot help window!__**");
 					
@@ -81,7 +82,8 @@ public class ReactionListener extends ListenerAdapter {
 				}
 				
 //				Global UI
-				if(event.getReaction().toString().contains("RE:" + global)) {
+				if(event.getReaction().toString().contains("RE:" + global))
+				{
 					
 					builder.setTitle("**__Global commands__**");
 					
@@ -107,7 +109,8 @@ public class ReactionListener extends ListenerAdapter {
 				}
 				
 				//Private UI
-				if(event.getReaction().toString().contains("RE:" + Private)) {
+				if(event.getReaction().toString().contains("RE:" + Private))
+				{
 					
 					builder.setTitle("**__Private commands__**");
 					
@@ -133,7 +136,8 @@ public class ReactionListener extends ListenerAdapter {
 				}
 				
 				//Music UI
-				if(event.getReaction().toString().contains("RE:" + music)) {
+				if(event.getReaction().toString().contains("RE:" + music))
+				{
 					
 					builder.setTitle("**__Music commands__**");
 					
@@ -159,7 +163,8 @@ public class ReactionListener extends ListenerAdapter {
 				}
 				
 				//Setup UI
-				if(event.getReaction().toString().contains("RE:" + setup) && event.getMember().hasPermission(Permission.ADMINISTRATOR) || event.getReaction().toString().contains("RE:" + setup) && event.getMember().getIdLong() == 255313111391666176l) {
+				if(event.getReaction().toString().contains("RE:" + setup) && event.getMember().hasPermission(Permission.ADMINISTRATOR) || event.getReaction().toString().contains("RE:" + setup) && event.getMember().getIdLong() == 255313111391666176l)
+				{
 					
 					new SetupCommand().setupInfo("info", event.getChannel(), message.getIdLong());
 					
@@ -205,7 +210,8 @@ public class ReactionListener extends ListenerAdapter {
 				}
 				
 				//Credits UI
-				if(event.getReaction().toString().contains("RE:" + credits)) {
+				if(event.getReaction().toString().contains("RE:" + credits))
+				{
 					
 					builder.setTitle("**__Credits__**");
 					
