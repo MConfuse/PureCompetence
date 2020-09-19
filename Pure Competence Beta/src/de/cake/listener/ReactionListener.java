@@ -87,7 +87,7 @@ public class ReactionListener extends ListenerAdapter {
 					
 					builder.setTitle("**__Global commands__**");
 					
-					builder.addField("**$**", "", false);
+					builder.addField("**$Date**", "Shows you the current date.", false);
 					builder.addField("**$**", "", false);
 					builder.addField("**$**", "", false);
 					builder.addField("**$**", "", false);
