@@ -18,7 +18,6 @@ public class GetPicCommand implements ServerCommand {
 		String[] args = message.getContentDisplay().split(" ");
 		EmbedBuilder builder = new EmbedBuilder();
 		String footer = "Alex's fault";
-		
 		int amount = 1;
 		
 		try
