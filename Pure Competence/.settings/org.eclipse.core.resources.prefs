@@ -1,0 +1,5 @@
+eclipse.preferences.version=1
+encoding//src/de/cake/commands/privateCommands/text/HelpCommand.java=UTF-8
+encoding//src/de/cake/commands/serverCommands/text/HelpCommand.java=UTF-8
+encoding//src/de/cake/listener/CommandListener.java=UTF-8
+encoding//src/de/cake/listener/VoiceListener.java=UTF-8
