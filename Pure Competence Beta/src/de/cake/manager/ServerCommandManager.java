@@ -9,6 +9,7 @@ import de.cake.commands.serverCommands.music.SkipCommand;
 import de.cake.commands.serverCommands.music.StopCommand;
 import de.cake.commands.serverCommands.music.TrackInfoCommand;
 import de.cake.commands.serverCommands.music.VolumeCommand;
+import de.cake.commands.serverCommands.text.DateCommand;
 import de.cake.commands.serverCommands.text.DeveloperCommand;
 import de.cake.commands.serverCommands.text.GetPicCommand;
 import de.cake.commands.serverCommands.text.HelpCommand;
@@ -39,6 +40,8 @@ public class ServerCommandManager {
 		this.commands.put("setup", new SetupCommand());
 		
 		this.commands.put("leave", new LeaveGuildCommand());
+		
+		this.commands.put("date", new DateCommand());
 		
 		//--Music Commands--
 		
