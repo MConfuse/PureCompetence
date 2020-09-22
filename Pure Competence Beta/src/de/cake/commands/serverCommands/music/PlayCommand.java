@@ -18,9 +18,20 @@ import net.dv8tion.jda.api.entities.VoiceChannel;
 
 public class PlayCommand implements ServerCommand {
 
+	/**
+	 * Plays a track via Voice Chat. Only supports the LavaPlayer's Audio Stream with the by LavaPlayer supported File formats.
+	 * 
+	 * @param URL
+	 * @param YouTube
+	 * @param SoundCloud
+	 * @param MP3
+	 * 
+	 * @see types#ServerCommand
+	 * @see manager#ServerCommandManager
+	 * @see musicController#PlayerManager
+	 */
 	@Override
 	public void performCommand(String command, Member m, TextChannel channel, Message message, Guild guild) {
-		
 		String[] args = message.getContentDisplay().split(" ");
 		EmbedBuilder builder = new EmbedBuilder();
 		

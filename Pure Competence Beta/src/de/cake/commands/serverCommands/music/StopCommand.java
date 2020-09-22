@@ -19,6 +19,13 @@ import net.dv8tion.jda.api.managers.AudioManager;
 
 public class StopCommand implements ServerCommand {
 
+	/**
+	 * Stops the currently playing track. Only supports the LavaPlayer's Audio Stream. Will disconnect from the VoiceChannel and clear the Queue.
+	 * 
+	 * @see types#ServerCommand
+	 * @see manager#ServerCommandManager
+	 * @see musicController#PlayerManager
+	 */
 	@Override
 	public void performCommand(String command, Member m, TextChannel channel, Message message, Guild guild) {
 		

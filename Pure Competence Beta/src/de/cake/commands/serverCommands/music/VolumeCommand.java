@@ -18,6 +18,15 @@ import net.dv8tion.jda.api.entities.VoiceChannel;
 
 public class VolumeCommand implements ServerCommand {
 	
+	/**
+	 * Changes the volume of the Audio Player. Only effects the LavaPlayer's Audio Stream.
+	 * 
+	 * @param int volume
+	 * 
+	 * @see types#ServerCommand
+	 * @see manager#ServerCommandManager
+	 * @see musicController#PlayerManager
+	 */
 	@Override
 	public void performCommand(String command, Member m, TextChannel channel, Message message, Guild guild) {
 		

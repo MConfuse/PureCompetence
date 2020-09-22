@@ -17,8 +17,14 @@ import net.dv8tion.jda.api.entities.TextChannel;
 import net.dv8tion.jda.api.entities.VoiceChannel;
 
 public class PauseCommand implements ServerCommand {
-	AudioPlayer player;
-
+	
+	/**
+	 * Pauses the currently playing track. Only supports the LavaPlayer's Audio Stream.
+	 * 
+	 * @see types#ServerCommand
+	 * @see manager#ServerCommandManager
+	 * @see musicController#PlayerManager
+	 */
 	@Override
 	public void performCommand(String command, Member m, TextChannel channel, Message message, Guild guild) {
 		EmbedBuilder builder = new EmbedBuilder();

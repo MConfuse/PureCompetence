@@ -27,8 +27,15 @@ import net.dv8tion.jda.api.managers.AudioManager;
 
 public class TrackInfoCommand implements ServerCommand {
 
-	//AudioTrack track;
-	
+	/**
+	 * Retrieves Information about the currently playing Track, for example Title, URL and time played.
+	 * 
+	 * @return Information about the currently playing Track.
+	 * 
+	 * @see types#ServerCommand
+	 * @see manager#ServerCommandManager
+	 * @see musicController#PlayerManager
+	 */
 	@Override
 	public void performCommand(String command, Member m, TextChannel channel, Message message, Guild guild) {
 		

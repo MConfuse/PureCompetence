@@ -19,14 +19,25 @@ import net.dv8tion.jda.api.entities.VoiceChannel;
 
 public class QueueListCommand implements ServerCommand {
 
+	/**
+	 * Used to retrieve the current Queue list of the Bot on that specific Guild.
+	 * 
+	 * @return Queue list in String format
+	 * 
+	 * @see types#ServerCommand
+	 * @see manager#ServerCommandManager
+	 * @see musicController#PlayerManager
+	 */
 	@Override
 	public void performCommand(String command, Member m, TextChannel channel, Message message, Guild guild) {
 		EmbedBuilder builder = new EmbedBuilder();
 		
 		GuildVoiceState state;
-		if((state = m.getVoiceState()) != null) {
+		if((state = m.getVoiceState()) != null)
+		{
 			VoiceChannel vc;
-			if((vc = state.getChannel()) != null) {
+			if((vc = state.getChannel()) != null)
+			{
 				MusicController controller = PureCompetence.INSTANCE.playerManager.getController(vc.getGuild().getIdLong());
 				AudioPlayer player = controller.getPlayer();
 				AudioTrack track = player.getPlayingTrack();
@@ -46,20 +57,28 @@ public class QueueListCommand implements ServerCommand {
 				
 				builder.addField(":arrow_forward: Currently playing", info.title + "\r " + "Player at: " + (hours > 0 ? hours + "h " : "") + minutes + "min " + seconds + "s", false);
 				
-				if(listSize <= 10) {
-					for(int i = 0; i < listSize; i++) {
+				if(listSize <= 10)
+				{
+					for(int i = 0; i < listSize; i++)
+					{
 						//listString += i + 1 + ". " + queue.getQueuelist().get(i).getInfo().title + "\r";
 						listString.append(i + 1 + ". " + queue.getQueuelist().get(i).getInfo().title + " \r");
 					}
-				} else {
-					for(int i = 0; i < 10; i++) {
+				}
+				else
+				{
+					for(int i = 0; i < 10; i++)
+					{
 						//listString += i + 1 + ". " + queue.getQueuelist().get(i).getInfo().title + "\r";
 						listString.append(i + 1 + ". " + queue.getQueuelist().get(i).getInfo().title + " \r");
-						if(i == 10) {
+						if(i == 10)
+						{
 							//listString += "**There are " + listSizeE.toString() + " more tracks in queue.**";
 							listString.append("**There are " + listSizeE.toString() + " more tracks in queue.**");
 						}
-					}	
+						
+					}
+					
 				}
 				
 				builder.addField("Queue list (" + listSize + "/600 Tracks in the queue)", "" + listString, false);

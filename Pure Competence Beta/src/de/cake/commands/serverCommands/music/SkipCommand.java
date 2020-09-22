@@ -17,6 +17,15 @@ import net.dv8tion.jda.api.entities.VoiceChannel;
 
 public class SkipCommand  implements ServerCommand {
 	
+	/**
+	 * Skips the currently playing track. Only supports the LavaPlayer's Audio Stream.
+	 * 
+	 * @param int amount
+	 * 
+	 * @see types#ServerCommand
+	 * @see manager#ServerCommandManager
+	 * @see musicController#PlayerManager
+	 */
 	@Override
 	public void performCommand(String command, Member m, TextChannel channel, Message message, Guild guild) {
 		
