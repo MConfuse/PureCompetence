@@ -9,6 +9,13 @@ import net.dv8tion.jda.api.entities.TextChannel;
 
 public class LeaveGuildCommand implements ServerCommand {
 
+	/**
+	 * Leaves the specified Guild.
+	 * Does not need to be documented ;).
+	 * 
+	 * @see types#ServerCommand
+	 * @see manager#ServerCommandManager
+	 */
 	@Override
 	public void performCommand(String command, Member m, TextChannel channel, Message message, Guild guild) {
 		

@@ -10,7 +10,14 @@ import net.dv8tion.jda.api.entities.TextChannel;
 import net.dv8tion.jda.api.requests.RestAction;
 
 public class DeveloperCommand implements ServerCommand {
-
+	
+	/**
+	 * Changes to what ever I'm currently testing :)
+	 * No need to be documented ;)
+	 * 
+	 * @see types#ServerCommand
+	 * @see manager#ServerCommandManager
+	 */
 	@Override
 	public void performCommand(String command, Member m, TextChannel channel, Message message, Guild guild) {
 		

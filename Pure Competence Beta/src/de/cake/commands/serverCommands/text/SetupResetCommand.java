@@ -17,6 +17,12 @@ public class SetupResetCommand {
 	
 	private long roleid;
 	
+	/**
+	 * Used to clear / reset the Bot's setup on the Guild.
+	 * 
+	 * @see types#ServerCommand
+	 * @see manager#ServerCommandManager
+	 */
 	public void setupReset(Guild guild, TextChannel channel, String call) {
 		
 		StringBuilder sbf = new StringBuilder();

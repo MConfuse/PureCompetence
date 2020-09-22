@@ -20,6 +20,17 @@ public class SetupCommand implements ServerCommand {
 	 * 		Add Lines here so I can find shit easier!
 	 */
 	
+	/**
+	 * Used to retrieve and set the Bot's setup.
+	 * 
+	 * @param I wrote a super detailed explanation before I accidentally deleted it, now you can fuck off 
+	 * 		  and look in the {@link de.cake.listener.ReactionListener} for the Setup help menu, might find something useful here too.
+	 * 
+	 * @return Setup of the Bot on the Guild this message was sent in. Only works if the User has the Administrator role or Administrator permissions on the Server.
+	 * 
+	 * @see types#ServerCommand
+	 * @see manager#ServerCommandManager
+	 */
 	@Override
 	public void performCommand(String command, Member m, TextChannel channel, Message message, Guild guild) {
 		

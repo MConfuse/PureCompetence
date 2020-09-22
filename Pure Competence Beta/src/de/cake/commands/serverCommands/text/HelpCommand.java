@@ -18,6 +18,14 @@ public class HelpCommand implements ServerCommand {
 	private String setup = "U+2699U+fe0f";
 	private String credits = "U+1f4b3";
 	
+	/**
+	 * Used to create the Help menu. It is dependent on the {@link de.cake.listener.ReactionListener} due to the click GUI thingy.
+	 * 
+	 * @return Returns a Help menu which is dependent on the {@link de.cake.listener.ReactionListener} to function.
+	 * 
+	 * @see types#ServerCommand
+	 * @see manager#ServerCommandManager
+	 */
 	@Override
 	public void performCommand(String command, Member m, TextChannel channel, Message message, Guild guild) {
 		

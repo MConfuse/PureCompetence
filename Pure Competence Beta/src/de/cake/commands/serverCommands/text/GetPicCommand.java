@@ -13,6 +13,15 @@ import net.dv8tion.jda.api.entities.TextChannel;
 
 public class GetPicCommand implements ServerCommand {
 	
+	/**
+	 * Used to retrieve X amount of naughty pictures. Only implemented because of Alex lmao.
+	 * Maybe you shouldn't document this one lol.
+	 * 
+	 * @param int amount
+	 * 
+	 * @see types#ServerCommand
+	 * @see manager#ServerCommandManager
+	 */
 	@Override
 	public void performCommand(String command, Member m, TextChannel channel, Message message, Guild guild) {
 		String[] args = message.getContentDisplay().split(" ");
