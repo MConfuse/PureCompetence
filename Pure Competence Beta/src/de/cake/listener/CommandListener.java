@@ -10,7 +10,16 @@ import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
 public class CommandListener extends ListenerAdapter {
-
+	
+	/**
+	 * Called whenever the Bot receives a message (Private or Server Message). If the {@link de.cake.manager.ServerCommandManager} 
+	 * has the specified Command it will call the {@link de.cake.manager.ServerCommandManager#perform(String, net.dv8tion.jda.api.entities.Member, TextChannel, net.dv8tion.jda.api.entities.Message, net.dv8tion.jda.api.entities.Guild)} 
+	 * method for that specific Command.
+	 * 
+	 * @see cake#PureCompetence
+	 * @see types#ServerCommand
+	 * @see manager#ServerCommandManager
+	 */
 	@Override
 	public void onMessageReceived(MessageReceivedEvent event) {
 

@@ -18,7 +18,14 @@ import net.dv8tion.jda.api.events.guild.member.GuildMemberRemoveEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
 public class JoinListener extends ListenerAdapter {
-
+	
+	/**
+	 * Called whenever a new Member Joins a Guild, if the Setup allows it the Bot will give the User the specified role and 
+	 * send a Message into the Join message Channel.
+	 * 
+	 * @see text#SetupCommand
+	 * @see LiteSQL#SQLManager
+	 */
 	@Override
 	public void onGuildMemberJoin(GuildMemberJoinEvent event) {
 		Member m = event.getMember();
@@ -74,7 +81,14 @@ public class JoinListener extends ListenerAdapter {
 		}
 		
 	}
-
+	
+	/**
+	 * Called whenever the Bot was added to a Guild, will create a new Database entry for the Guild by using the {@link de.cake.commands.serverCommands.text.SetupResetCommand}.
+	 * Also sends a introduction message.
+	 * 
+	 * @see text#SetupResetCommand
+	 * @see LiteSQL#SQLManager
+	 */
 	public void onGuildJoin(GuildJoinEvent event) {
 		EmbedBuilder builder = new EmbedBuilder();
 		Guild guild = event.getGuild();
@@ -93,6 +107,12 @@ public class JoinListener extends ListenerAdapter {
 
 	}
 
+	/**
+	 * Called whenever a Member leaves the Guild, if the Setup allows it the Bot will send a Message into the Leave message Channel.
+	 * 
+	 * @see text#SetupCommand
+	 * @see LiteSQL#SQLManager
+	 */
 	public void onGuildMemberRemoveEvent(GuildMemberRemoveEvent event) {
 		Member m = event.getMember();
 		 TextChannel channel;

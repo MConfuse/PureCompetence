@@ -63,6 +63,18 @@ public class ServerCommandManager {
 		this.commands.put("play", new PlayCommand());
 	}
 	
+	/**
+	 * Used to check for Commands by the {@link de.cake.listener.CommandListener} and perform the called Command.
+	 * 
+	 * @return Returns true if the specified command is in the Hash Map, if it is it will perform the Command.
+	 * 
+	 * @param command
+	 * @param m
+	 * @param channel
+	 * @param message
+	 * @param guild
+	 * @return
+	 */
 	public boolean perform(String command, Member m, TextChannel channel, Message message, Guild guild) {
 		
 		ServerCommand cmd;

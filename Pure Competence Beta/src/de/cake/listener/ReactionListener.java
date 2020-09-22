@@ -32,23 +32,34 @@ public class ReactionListener extends ListenerAdapter {
 	 *		UI for play list command?
 	*/
 	
+	/**
+	 * Used to provide the {@link de.cake.commands.serverCommands.text.HelpCommand} by providing a sort of API to add Emotes 
+	 * and Event Screens to the Message in question. Will require the Message to be sent by the Bot.
+	 * 
+	 * @return Returns the Click Help Menu
+	 * 
+	 * @see text#HelpCommand
+	 */
 	@Override
 	public void onGuildMessageReactionAdd(GuildMessageReactionAddEvent event) {
 		
-		//----------------------------Help menu V1----------------------------
+//		----------------------------Help menu V1----------------------------
 		EmbedBuilder builder = new EmbedBuilder();
 		
-		if(event.getMember().getUser().isBot()) return;
+		if(event.getMember().getUser().isBot())
+			return;
 		
 		long id = event.getMessageIdLong();
 		Message message = event.getChannel().retrieveMessageById(id).complete();
 		
 //		System.out.println(event.getReaction());
 		
-		if(message.getMember().getIdLong() == 741370197163769876l || message.getMember().getIdLong() == 667322795025498132l) {
-			try {
+		if(message.getMember().getIdLong() == 741370197163769876l || message.getMember().getIdLong() == 667322795025498132l)
+		{
+			try
+			{
 				
-				//---------------------------------------- Help UI ----------------------------------------
+//				---------------------------------------- Help UI ----------------------------------------
 				
 //				Home UI
 				if(event.getReaction().toString().contains("RE:" + home))
@@ -108,7 +119,7 @@ public class ReactionListener extends ListenerAdapter {
 					return;
 				}
 				
-				//Private UI
+//				Private UI
 				if(event.getReaction().toString().contains("RE:" + Private))
 				{
 					
@@ -135,7 +146,7 @@ public class ReactionListener extends ListenerAdapter {
 					return;
 				}
 				
-				//Music UI
+//				Music UI
 				if(event.getReaction().toString().contains("RE:" + music))
 				{
 					
@@ -162,7 +173,7 @@ public class ReactionListener extends ListenerAdapter {
 					return;
 				}
 				
-				//Setup UI
+//				Setup UI
 				if(event.getReaction().toString().contains("RE:" + setup) && event.getMember().hasPermission(Permission.ADMINISTRATOR) || event.getReaction().toString().contains("RE:" + setup) && event.getMember().getIdLong() == 255313111391666176l)
 				{
 					
@@ -173,7 +184,9 @@ public class ReactionListener extends ListenerAdapter {
 					message.getChannel().addReactionById(message.getIdLong(), setupHelp).queue();
 					
 					return;
-				} else if(event.getReaction().toString().contains("RE:" + setup) && !event.getMember().hasPermission(Permission.ADMINISTRATOR)) {
+				}
+				else if(event.getReaction().toString().contains("RE:" + setup) && !event.getMember().hasPermission(Permission.ADMINISTRATOR))
+				{
 					message.removeReaction(event.getReactionEmote().getAsReactionCode(), event.getMember().getUser()).queue();
 					
 					builder.setTitle("**__Insuffecient permissions!__**");
@@ -186,7 +199,7 @@ public class ReactionListener extends ListenerAdapter {
 					return;
 				}
 				
-				//Setup UI Help
+//				Setup UI Help
 				if(event.getReaction().toString().contains("RE:" + setupHelp) && event.getMember().hasPermission(Permission.ADMINISTRATOR) || event.getReaction().toString().contains("RE:" + setupHelp) && event.getMember().getIdLong() == 255313111391666176l) {
 					
 					new SetupCommand().helpMenu("help", event.getChannel(), event.getGuild(), message.getIdLong());
@@ -196,7 +209,9 @@ public class ReactionListener extends ListenerAdapter {
 					message.getChannel().addReactionById(message.getIdLong(), setup).queue();
 					
 					return;
-				} else if(event.getReaction().toString().contains("RE:" + setup) && !event.getMember().hasPermission(Permission.ADMINISTRATOR)) {
+				}
+				else if(event.getReaction().toString().contains("RE:" + setup) && !event.getMember().hasPermission(Permission.ADMINISTRATOR))
+				{
 					message.removeReaction(event.getReactionEmote().getAsReactionCode(), event.getMember().getUser()).queue();
 					
 					builder.setTitle("**__Insuffecient permissions!__**");
@@ -209,7 +224,7 @@ public class ReactionListener extends ListenerAdapter {
 					return;
 				}
 				
-				//Credits UI
+//				Credits UI
 				if(event.getReaction().toString().contains("RE:" + credits))
 				{
 					
@@ -236,9 +251,9 @@ public class ReactionListener extends ListenerAdapter {
 					return;
 				}
 				
-				// ---------------------------------------- Help UI end ----------------------------------------
+//				 ---------------------------------------- Help UI end ----------------------------------------
 				
-				//Removing the reaction that does not fit, NOTE: This will cause reactions on the Bot to be removed. I might change that later lol
+//				Removing the reaction that does not fit, NOTE: This will cause reactions on the Bot to be removed. I might change that later lol
 				message.removeReaction(event.getReactionEmote().getAsReactionCode(), event.getMember().getUser()).queue();
 				
 				builder.setTitle("**Unknown reaction!**");
@@ -250,7 +265,9 @@ public class ReactionListener extends ListenerAdapter {
 				
 				return;
 				
-			} catch(PermissionException e) {
+			}
+			catch(PermissionException e)
+			{
 				e.printStackTrace();
 				
 				builder.setTitle("Insufficient permissions");
@@ -262,7 +279,7 @@ public class ReactionListener extends ListenerAdapter {
 		
 		}
 		
-		//----------------------------Help menu V1 end----------------------------
+//		----------------------------Help menu V1 end----------------------------
 	}
 	
 	//Order for Emotes to be added

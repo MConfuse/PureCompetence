@@ -55,6 +55,22 @@ public class PureCompetence {
 		
 	}
 
+	/**
+	 * Creates the Bot's Instance, sets the Bot up and makes it life. Get's called by the main method.
+	 * 
+	 * Also adds a bit of magic into the Mix ;)
+	 * 
+	 * @throws LoginException
+	 * @throws IllegalArgumentException
+	 * 
+	 * @see manager#ServerCommandManager
+	 * @see musicController#PlayerManager
+	 * @see listener#CommandListener
+	 * @see listener#VoiceListener
+	 * @see listener#JoinListener
+	 * @see listener#ReationListener
+	 * @see #shutdown()
+	 */
 	public PureCompetence() throws LoginException, IllegalArgumentException {
 		INSTANCE = this;
 		
