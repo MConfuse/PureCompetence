@@ -1,7 +1,9 @@
 package de.cake.commands.serverCommands.text;
 
+import java.time.OffsetDateTime;
 import java.time.ZonedDateTime;
 
+import de.cake.PureCompetence;
 import de.cake.commands.types.ServerCommand;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.Guild;
@@ -27,9 +29,11 @@ public class DateCommand implements ServerCommand {
 		builder.setTitle("Current Date and Time");
 		builder.addField("Date", time.getDayOfMonth() + "." + time.getMonthValue() + "." + time.getYear(), true);
 		builder.addField("System Time", time.getHour() + ":" + time.getMinute() + ":" + time.getSecond(), true);
+		builder.setColor(PureCompetence.INSTANCE.clrBlue);
+		builder.setFooter(PureCompetence.INSTANCE.pwrdBy);
+		builder.setTimestamp(OffsetDateTime.now());
 		
 		channel.sendMessage(builder.build()).queue();
-		
 	}
 
 }

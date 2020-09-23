@@ -30,7 +30,6 @@ public class PPSizeCommand implements ServerCommand {
 		}
 		
 		channel.sendMessage(sbf + "D").queue();
-		
 	}
 
 }
