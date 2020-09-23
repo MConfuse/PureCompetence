@@ -153,7 +153,8 @@ public class ReactionListener extends ListenerAdapter {
 					builder.setTitle("**__Music commands__**");
 					
 					builder.addField("**$Play [next] [YouTube/url]**", "Plays the Sound of the video. The `[next]` is optional and determines wether or not the track should be played directly after the current one or be queued in the regular queue. Currently Supports YouTube, Soundcloud, Vimeo, Twitch Livestreams, Bandcamps by using the URL.", false);
-					builder.addField("**$Pause / p**", "Disconnects the Bot and clears the queue", false);
+					builder.addField("**$Pause / p**", "Pauses/resumes the currently playing track.", false);
+                    builder.addField("**$Stop**", "Disconnects the Bot and clears the queue", false);
 					builder.addField("**$Queuelist / qlist / queue**", "Shows the currently playing track and the next 10 tracks in queue.", false);
 					builder.addField("**$Volume / vol**", "Sets the Audio volume of the current player. The default value is 10%, the default value can be configured with the **Setup commands** which can be found in the **Bot Setup** category.", false);
 					builder.addField("**$Skip [amount]**", "Skips the currently playing track/s.", false);

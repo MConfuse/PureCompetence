@@ -62,8 +62,7 @@ public class ServerCommandManager {
 		this.commands.put("vol", new VolumeCommand());
 		this.commands.put("volume", new VolumeCommand());
 		
-		this.commands.put("play", new PlayCommand());
-		this.commands.put("play", new PlayCommand());
+		this.commands.put("playlist", new PlayCommand());
 	}
 	
 	/**

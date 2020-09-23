@@ -142,6 +142,8 @@ public class AudioLoadResult implements AudioLoadResultHandler {
 
 	@Override
 	public void loadFailed(FriendlyException exception) {
+		exception.printStackTrace();
+		System.out.println(exception.getCause());
 		EmbedBuilder builder = new EmbedBuilder().setColor(PureCompetence.INSTANCE.clrRed).setTitle("**Loading failed**")
 				.setDescription("Couldn't load the Video due to an error! Please try again later!").setFooter(PureCompetence.INSTANCE.pwrdBy + ", " + PureCompetence.INSTANCE.PlayMsg)
 				.setTimestamp(OffsetDateTime.now());

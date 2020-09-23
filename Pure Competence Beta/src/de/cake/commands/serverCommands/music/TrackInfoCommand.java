@@ -47,15 +47,13 @@ public class TrackInfoCommand implements ServerCommand {
 			if((vc = state.getChannel()) != null) {
 				MusicController controller = PureCompetence.INSTANCE.playerManager.getController(vc.getGuild().getIdLong());
 				AudioPlayer player = controller.getPlayer();
-				AudioTrack track = player.getPlayingTrack();
 				long guildid = PureCompetence.INSTANCE.playerManager.getGuildByPlayerHash(player.hashCode());
 				Guild guild1 = PureCompetence.INSTANCE.shardMan.getGuildById(guildid);
 				AudioManager manager = vc.getGuild().getAudioManager();
 				
-				
-				
 				if(manager.getConnectedChannel() != null) {
 					if(player.getPlayingTrack() != null) {
+						AudioTrack track = player.getPlayingTrack();
 						builder.setColor(PureCompetence.INSTANCE.clrBlue);
 						AudioTrackInfo info = track.getInfo();
 						builder.setDescription(":cd: Now playing: " + info.title);
