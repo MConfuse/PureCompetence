@@ -84,7 +84,7 @@ public class PureCompetence {
 		SQLManager.onCreate();
 
 		DefaultShardManagerBuilder builder = DefaultShardManagerBuilder.createDefault(
-				"NzQxMzcwMTk3MTYzNzY5ODc2.Xy2kzA.6hqT4iYMLCMJNmrgNh1fnHe7W3g", GatewayIntent.GUILD_MEMBERS,
+				"Token-goes-here", GatewayIntent.GUILD_MEMBERS,
 				GatewayIntent.GUILD_VOICE_STATES, GatewayIntent.GUILD_PRESENCES, GatewayIntent.GUILD_MESSAGES,
 				GatewayIntent.GUILD_MESSAGE_REACTIONS, GatewayIntent.DIRECT_MESSAGES);
 
