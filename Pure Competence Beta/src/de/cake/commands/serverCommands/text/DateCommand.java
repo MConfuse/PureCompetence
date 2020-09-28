@@ -34,6 +34,8 @@ public class DateCommand implements ServerCommand {
 		builder.setTimestamp(OffsetDateTime.now());
 		
 		channel.sendMessage(builder.build()).queue();
+		
+		
 	}
 
 }

@@ -27,13 +27,13 @@ import net.dv8tion.jda.api.sharding.ShardManager;
 public class PureCompetence {
 
 	public static PureCompetence INSTANCE;
-	
+
 	public ShardManager shardMan;
 	private ServerCommandManager cmdMan;
 //	private PrivateCommandManager pcmdMan;
 	public AudioPlayerManager audioPlayerManager;
 	public PlayerManager playerManager;
-	
+
 	public String version = "b0.02_Beta 4";
 	public String HelpUI = "HelpUI V2";
 	public String PlayMsg = "PlayMsg V2";
@@ -43,20 +43,25 @@ public class PureCompetence {
 	public int clrRed = 0xFF0000;
 	public int clrGreen = 0x00FF00;
 	public int clrViolet = 0xbd025a;
-	//If prefix is changed the CommandListener has to be modified - args
+	// If prefix is changed the CommandListener has to be modified - args
 	public final String prefix = "<";
 
-	public static void main(String[] args) {
-		try {
+	public static void main(String[] args)
+	{
+		try
+		{
 			new PureCompetence();
-		} catch (LoginException | IllegalArgumentException e) {
+		}
+		catch (LoginException | IllegalArgumentException e)
+		{
 			e.printStackTrace();
 		}
-		
+
 	}
 
 	/**
-	 * Creates the Bot's Instance, sets the Bot up and makes it life. Get's called by the main method.
+	 * Creates the Bot's Instance, sets the Bot up and makes it life. Get's called
+	 * by the main method.
 	 * 
 	 * Also adds a bit of magic into the Mix ;)
 	 * 
@@ -71,72 +76,88 @@ public class PureCompetence {
 	 * @see listener#ReationListener
 	 * @see #shutdown()
 	 */
-	public PureCompetence() throws LoginException, IllegalArgumentException {
+	public PureCompetence() throws LoginException, IllegalArgumentException
+	{
 		INSTANCE = this;
-		
+
 		LiteSQL.connect();
 		SQLManager.onCreate();
 
-		DefaultShardManagerBuilder builder = DefaultShardManagerBuilder.createDefault("NzQxMzcwMTk3MTYzNzY5ODc2.Xy2kzA.6hqT4iYMLCMJNmrgNh1fnHe7W3g", GatewayIntent.GUILD_MEMBERS, GatewayIntent.GUILD_VOICE_STATES, GatewayIntent.GUILD_PRESENCES, GatewayIntent.GUILD_MESSAGES, GatewayIntent.GUILD_MESSAGE_REACTIONS, GatewayIntent.DIRECT_MESSAGES);
+		DefaultShardManagerBuilder builder = DefaultShardManagerBuilder.createDefault(
+				"NzQxMzcwMTk3MTYzNzY5ODc2.Xy2kzA.6hqT4iYMLCMJNmrgNh1fnHe7W3g", GatewayIntent.GUILD_MEMBERS,
+				GatewayIntent.GUILD_VOICE_STATES, GatewayIntent.GUILD_PRESENCES, GatewayIntent.GUILD_MESSAGES,
+				GatewayIntent.GUILD_MESSAGE_REACTIONS, GatewayIntent.DIRECT_MESSAGES);
 
 		builder.setActivity(Activity.playing("Testing HelpUI V2 & PlayCommand V2| '<help'"));
 		builder.setStatus(OnlineStatus.ONLINE);
-		
+
 		this.audioPlayerManager = new DefaultAudioPlayerManager();
 		this.playerManager = new PlayerManager();
 
 		this.cmdMan = new ServerCommandManager();
 //		this.pcmdMan = new PrivateCommandManager();
-		
+
 		builder.addEventListeners(new CommandListener());
 		builder.addEventListeners(new VoiceListener());
 		builder.addEventListeners(new JoinListener());
 		builder.addEventListeners(new ReactionListener());
-		
+
 		shardMan = builder.build();
 		System.out.println("Bot online. [Beta Pure Competence]");
 
 		AudioSourceManagers.registerRemoteSources(audioPlayerManager);
 		audioPlayerManager.getConfiguration().setFilterHotSwapEnabled(true);
-		
+
 		shutdown();
-		
+
 	}
 
-	public void shutdown() {
+	public void shutdown()
+	{
 
 		new Thread(() -> {
 
 			String line = "";
 			BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-			try {
-				while ((line = reader.readLine()) != null) {
+			try
+			{
+				while ((line = reader.readLine()) != null)
+				{
 
-					if (line.equalsIgnoreCase("end me") || line.equalsIgnoreCase("end") || line.equalsIgnoreCase("FUCK ME") || line.equalsIgnoreCase("SHUT") || line.equalsIgnoreCase("BE GONE UNHOLY")) {
-						if (shardMan != null) {
+					if (line.equalsIgnoreCase("end me") || line.equalsIgnoreCase("end")
+							|| line.equalsIgnoreCase("FUCK ME") || line.equalsIgnoreCase("SHUT")
+							|| line.equalsIgnoreCase("BE GONE UNHOLY"))
+					{
+						if (shardMan != null)
+						{
 							LiteSQL.disconnect();
 							shardMan.shutdown();
 							System.out.println("Bot offline.");
 						}
-						
+
 						reader.close();
 						break;
-					} else {
+					}
+					else
+					{
 						System.out.println("Use 'end' to shutdown.");
 					}
-					
+
 				}
-				
-			} catch (IOException e) {
+
+			}
+			catch (IOException e)
+			{
 				e.printStackTrace();
 			}
-			
+
 		}).start();
-	
+
 	}
-	
-	public ServerCommandManager getCmdMan() {
+
+	public ServerCommandManager getCmdMan()
+	{
 		return cmdMan;
 	}
-	
+
 }
