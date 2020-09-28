@@ -83,10 +83,9 @@ public class PureCompetence {
 		LiteSQL.connect();
 		SQLManager.onCreate();
 
-		DefaultShardManagerBuilder builder = DefaultShardManagerBuilder.createDefault(
-				"Token-goes-here", GatewayIntent.GUILD_MEMBERS,
-				GatewayIntent.GUILD_VOICE_STATES, GatewayIntent.GUILD_PRESENCES, GatewayIntent.GUILD_MESSAGES,
-				GatewayIntent.GUILD_MESSAGE_REACTIONS, GatewayIntent.DIRECT_MESSAGES);
+		DefaultShardManagerBuilder builder = DefaultShardManagerBuilder.createDefault("Token-goes-here",
+				GatewayIntent.GUILD_MEMBERS, GatewayIntent.GUILD_VOICE_STATES, GatewayIntent.GUILD_PRESENCES,
+				GatewayIntent.GUILD_MESSAGES, GatewayIntent.GUILD_MESSAGE_REACTIONS, GatewayIntent.DIRECT_MESSAGES);
 
 		builder.setActivity(Activity.playing("Testing HelpUI V2 & PlayCommand V2| '<help'"));
 		builder.setStatus(OnlineStatus.ONLINE);
@@ -115,7 +114,8 @@ public class PureCompetence {
 	public void shutdown()
 	{
 
-		new Thread(() -> {
+		new Thread(() ->
+		{
 
 			String line = "";
 			BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
