@@ -58,7 +58,7 @@ public class PureCompetence {
 		LiteSQL.connect();
 		SQLManager.onCreate();
 
-		JDABuilder builder = JDABuilder.createDefault("NjY3MzIyNzk1MDI1NDk4MTMy.XtVHzg.y6O5P7gp3X6TzMAEAsoJgzwkwDY", GatewayIntent.GUILD_MEMBERS, GatewayIntent.GUILD_VOICE_STATES, GatewayIntent.GUILD_PRESENCES, GatewayIntent.GUILD_MESSAGES, GatewayIntent.GUILD_MESSAGE_REACTIONS, GatewayIntent.DIRECT_MESSAGES);
+		JDABuilder builder = JDABuilder.createDefault("Token-goes-here", GatewayIntent.GUILD_MEMBERS, GatewayIntent.GUILD_VOICE_STATES, GatewayIntent.GUILD_PRESENCES, GatewayIntent.GUILD_MESSAGES, GatewayIntent.GUILD_MESSAGE_REACTIONS, GatewayIntent.DIRECT_MESSAGES);
 		
 		builder.setActivity(Activity.playing("with myself | '$help'"));
 		builder.setStatus(OnlineStatus.ONLINE);
