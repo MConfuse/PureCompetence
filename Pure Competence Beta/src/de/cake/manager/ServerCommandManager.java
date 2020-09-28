@@ -11,7 +11,6 @@ import de.cake.commands.serverCommands.music.TrackInfoCommand;
 import de.cake.commands.serverCommands.music.VolumeCommand;
 import de.cake.commands.serverCommands.text.DateCommand;
 import de.cake.commands.serverCommands.text.DeveloperCommand;
-import de.cake.commands.serverCommands.text.GetPicCommand;
 import de.cake.commands.serverCommands.text.HelpCommand;
 import de.cake.commands.serverCommands.text.LeaveGuildCommand;
 import de.cake.commands.serverCommands.text.PPSizeCommand;
@@ -33,7 +32,6 @@ public class ServerCommandManager {
 		
 		this.commands.put("dev", new DeveloperCommand());
 		this.commands.put("help", new HelpCommand());
-		this.commands.put("getpicc", new GetPicCommand());
 		
 		this.commands.put("pp", new PPSizeCommand());
 		
