@@ -60,7 +60,7 @@ public class PlayCommand implements ServerCommand {
 					builder.setFooter(PureCompetence.INSTANCE.pwrdBy);
 					builder.setTimestamp(OffsetDateTime.now());
 					
-					apm.loadItem(url, new AudioLoadResult(controller, url, channel.getIdLong(), channel.sendMessage(builder.build()).complete().getIdLong(), -999, channel, state.getChannel()));
+					apm.loadItem(url, new AudioLoadResult(controller, url, channel.getIdLong(), channel.sendMessage(builder.build()).complete().getIdLong(), -999, channel, state.getChannel(), -1, m));
 					
 				} else if((vc = state.getChannel()) != null) {
 					MusicController controller = PureCompetence.INSTANCE.playerManager.getController(vc.getGuild().getIdLong());																		
@@ -81,7 +81,7 @@ public class PlayCommand implements ServerCommand {
 					builder.setFooter(PureCompetence.INSTANCE.pwrdBy);
 					builder.setTimestamp(OffsetDateTime.now());
 					
-					apm.loadItem(url, new AudioLoadResult(controller, url, channel.getIdLong(), channel.sendMessage(builder.build()).complete().getIdLong(), -1, channel, state.getChannel()));
+					apm.loadItem(url, new AudioLoadResult(controller, url, channel.getIdLong(), channel.sendMessage(builder.build()).complete().getIdLong(), -1, channel, state.getChannel(), -1, m));
 				}
 				
 			}

@@ -9,6 +9,7 @@ import de.cake.commands.serverCommands.music.SkipCommand;
 import de.cake.commands.serverCommands.music.StopCommand;
 import de.cake.commands.serverCommands.music.TrackInfoCommand;
 import de.cake.commands.serverCommands.music.VolumeCommand;
+import de.cake.commands.serverCommands.music.YouTubeSearchCommand;
 import de.cake.commands.serverCommands.text.DateCommand;
 import de.cake.commands.serverCommands.text.DeveloperCommand;
 import de.cake.commands.serverCommands.text.HelpCommand;
@@ -64,6 +65,7 @@ public class ServerCommandManager {
 		this.commands.put("volume", new VolumeCommand());
 		
 		this.commands.put("playlist", new PlayCommand());
+		this.commands.put("search", new YouTubeSearchCommand());
 	}
 	
 	/**

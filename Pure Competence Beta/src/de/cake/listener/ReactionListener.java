@@ -231,7 +231,7 @@ public class ReactionListener extends ListenerAdapter {
 					
 					builder.setTitle("**__Credits__**");
 					
-					builder.addField("**$**", "", false);
+					builder.addField("**GitHub repository**", "[You can find it here](https://github.com/MConfuse/PureCompetence)", false);
 					builder.addField("**$**", "", false);
 					builder.addField("**$**", "", false);
 					builder.addField("**$**", "", false);

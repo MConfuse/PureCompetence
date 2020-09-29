@@ -134,7 +134,7 @@ public class PlayListCommand implements ServerCommand {
 									builder.setFooter(PureCompetence.INSTANCE.pwrdBy);
 									builder.setTimestamp(OffsetDateTime.now());
 									
-									apm.loadItem(url, new AudioLoadResult(controller, url, channel.getIdLong(), channel.sendMessage(builder.build()).complete().getIdLong(), -1, channel, state.getChannel()));
+									apm.loadItem(url, new AudioLoadResult(controller, url, channel.getIdLong(), channel.sendMessage(builder.build()).complete().getIdLong(), -1, channel, state.getChannel(), -1, m));
 								} else if(args[2].equalsIgnoreCase("Chill")) {
 									
 									String url = "https://www.youtube.com/playlist?list=PL22otkb4s9l2h6oVr9VTyNOBf8MI0mboD";
@@ -144,7 +144,7 @@ public class PlayListCommand implements ServerCommand {
 									builder.setFooter(PureCompetence.INSTANCE.pwrdBy);
 									builder.setTimestamp(OffsetDateTime.now());
 									
-									apm.loadItem(url, new AudioLoadResult(controller, url, channel.getIdLong(), channel.sendMessage(builder.build()).complete().getIdLong(), -1, channel, state.getChannel()));
+									apm.loadItem(url, new AudioLoadResult(controller, url, channel.getIdLong(), channel.sendMessage(builder.build()).complete().getIdLong(), -1, channel, state.getChannel(), -1, m));
 								} else if(args[2].equalsIgnoreCase("hardbass")) {
 									
 									String url = "https://www.youtube.com/playlist?list=PLtQbLNyftupQj93vfVkTj9355rFo0XQ7Y";
@@ -154,7 +154,7 @@ public class PlayListCommand implements ServerCommand {
 									builder.setFooter(PureCompetence.INSTANCE.pwrdBy);
 									builder.setTimestamp(OffsetDateTime.now());
 									
-									apm.loadItem(url, new AudioLoadResult(controller, url, channel.getIdLong(), channel.sendMessage(builder.build()).complete().getIdLong(), -1, channel, state.getChannel()));
+									apm.loadItem(url, new AudioLoadResult(controller, url, channel.getIdLong(), channel.sendMessage(builder.build()).complete().getIdLong(), -1, channel, state.getChannel(), -1, m));
 								}
 								
 							} else {
