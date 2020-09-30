@@ -27,7 +27,7 @@ public class YouTubeSearchCommand implements ServerCommand {
 		if (!(args.length > 1))
 		{
 			commandUsage(channel);
-			
+
 			return;
 		}
 
@@ -70,13 +70,15 @@ public class YouTubeSearchCommand implements ServerCommand {
 	{
 		EmbedBuilder builder = new EmbedBuilder();
 
-		builder.addField("Playing listed Track", "To play one of the 5 Listed tracks, use `" + PureCompetence.INSTANCE.prefix + "search [Position in list] Unusual Memes`", false);
-		builder.setDescription("Does not support URL's yet, if nothing Matching the search therm was found it currently displays nothing lmao");
-		
+		builder.addField("Playing listed Track", "To play one of the 5 Listed tracks, use `"
+				+ PureCompetence.INSTANCE.prefix + "search [Position in list] Unusual Memes`", false);
+		builder.setDescription(
+				"Does not support URL's yet, if nothing Matching the search therm was found it currently displays nothing lmao");
+
 		builder.setColor(PureCompetence.INSTANCE.clrGreen);
 		builder.setFooter(PureCompetence.INSTANCE.pwrdBy + ", Search V0.1");
 		builder.setTimestamp(OffsetDateTime.now());
-		
+
 		channel.sendMessage(builder.build()).queue();
 	}
 

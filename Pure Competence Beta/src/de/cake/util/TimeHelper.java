@@ -4,7 +4,10 @@ public class TimeHelper {
 
 	private static long lastMS = System.currentTimeMillis();
 	
-	private static void reset()
+	/**
+	 * Resets the Timer used by {@link de.cake.util.TimeHelper#hasTimeElapsed(long, boolean)}.
+	 */
+	public static void resetTimer()
 	{
 		lastMS = System.currentTimeMillis();
 	}
@@ -22,7 +25,7 @@ public class TimeHelper {
 		if(System.currentTimeMillis() - lastMS > time)
 		{
 			if(reset)
-				reset();
+				resetTimer();
 				
 			return true;
 		}

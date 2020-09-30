@@ -22,7 +22,8 @@ public class OpenVoiceConnection {
 		
 		try {
 			if(set.next()) {
-				int vol = set.getInt("volume");
+				int vol = 10;
+				vol = set.getInt("volume");
 				
 				PureCompetence.INSTANCE.shardMan.getGuildById(guildID).getAudioManager().openAudioConnection(vc);
 				PureCompetence.INSTANCE.playerManager.getController(guildID).getPlayer().setVolume(vol);
