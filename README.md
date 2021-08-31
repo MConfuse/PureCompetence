@@ -1,4 +1,6 @@
 # PureCompetence
+NOTE: This is totally outdated and has been thrown out the window 10 Months ago :D
+
 A Java Discord Bot.
 
 Me and my Contributor are still fairly new to Coding we're learning with every line of Code, 
